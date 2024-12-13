@@ -1,0 +1,28 @@
+﻿@model List<Hatirlatici.Models.Company>
+
+<h1>Şirketler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Adı</th>
+            <th>Açıklama</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var company in Model)
+        {
+            <tr>
+                <td>@company.Id</td>
+                <td>@company.Name</td>
+                <td>@company.Description</td>
+                <td>
+                    <!-- Düzenle/Sil işlemleri yapılacak -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="@Url.Action("AddCompany")" class="btn btn-primary">Yeni Şirket Ekle</a>

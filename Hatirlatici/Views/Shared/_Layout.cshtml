@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hatırlatıcı</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Hatırlatıcı.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sol Menü -->
+            <div class="col-md-3">
+                <div class="list-group">
+                    <!-- Organizasyon Menüsü -->
+                    <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#organizationMenu" aria-expanded="false" aria-controls="organizationMenu">
+                        Organizasyon Yönetimi
+                    </a>
+                    <div class="collapse" id="organizationMenu">
+                        <a href="@Url.Action("GroupCompany", "Organization")" class="list-group-item list-group-item-action">Grup Şirketi Ekle</a>
+                        <a href="@Url.Action("City", "Organization")" class="list-group-item list-group-item-action">Şehir Ekle</a>
+                        <a href="@Url.Action("Company", "Organization")" class="list-group-item list-group-item-action">Şirket Ekle</a>
+                        <a href="@Url.Action("Branch", "Organization")" class="list-group-item list-group-item-action">Şube Ekle</a>
+                        <a href="@Url.Action("Brand", "Organization")" class="list-group-item list-group-item-action">Marka Ekle</a>
+                    </div>
+
+                    <!-- Envanter Menüsü -->
+                    <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#inventoryMenu" aria-expanded="false" aria-controls="inventoryMenu">
+                        Envanter Yönetimi
+                    </a>
+                    <div class="collapse" id="inventoryMenu">
+                        <a href="@Url.Action("AddVehicle", "Vehicle")" class="list-group-item list-group-item-action">Araç Ekle</a>
+                        <a href="@Url.Action("AddHouse", "House")" class="list-group-item list-group-item-action">Ev Ekle</a>
+                        <a href="@Url.Action("AddDocument", "Document")" class="list-group-item list-group-item-action">Evrak Ekle</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İçerik Alanı -->
+            <div class="col-md-9">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Hatırlatıcı - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

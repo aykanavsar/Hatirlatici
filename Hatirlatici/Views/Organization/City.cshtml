@@ -1,0 +1,26 @@
+﻿@model List<Hatirlatici.Models.City>
+
+<h1>Şehirler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Adı</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var city in Model)
+        {
+                <tr>
+                    <td>@city.Id</td>
+                    <td>@city.Name</td>
+                    <td>
+                        <!-- Düzenle/Sil işlemleri yapılacak -->
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+<a href="@Url.Action("AddCity")" class="btn btn-primary">Yeni Şehir Ekle</a>

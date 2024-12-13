@@ -1,0 +1,41 @@
+﻿@model List<Hatirlatici.Models.Brand>
+
+<h1>Markalar/Alt Şirketler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marka Adı</th>
+            <th>Açıklama</th>
+            <th>Şube</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var brand in Model)
+        {
+            <tr>
+                <td>@brand.Id</td>
+                <td>@brand.Name</td>
+                <td>@brand.Description</td>
+
+                <!-- Şube Adı Gösterme: Eğer null değilse, şube ismini göster -->
+                <td>
+                    @if (brand.Branch != null)
+                    {
+                        @brand.Branch.Name
+                    }
+                    else
+                    {
+                        @* Şube bilgisi yoksa, boş bırakılır *@
+                    }
+                </td>
+
+                <td>
+                    <!-- Diğer işlemler burada yapılabilir -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

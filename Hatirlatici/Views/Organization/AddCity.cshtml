@@ -1,0 +1,11 @@
+﻿@model Hatirlatici.Models.City
+
+<h1>Yeni Şehir Ekle</h1>
+
+<form method="post" action="@Url.Action("AddCity")">
+    <div class="form-group">
+        <label for="Name">Şehir Adı:</label>
+        <input type="text" id="Name" name="Name" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>

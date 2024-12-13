@@ -1,0 +1,28 @@
+﻿@model List<Hatirlatici.Models.GroupCompany>
+
+<h1>Grup Şirketleri</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Adı</th>
+            <th>Açıklama</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var groupCompany in Model)
+        {
+            <tr>
+                <td>@groupCompany.Id</td>
+                <td>@groupCompany.Name</td>
+                <td>@groupCompany.Description</td>
+                <td>
+                    <!-- Şirket düzenle/sil işlemleri yapılacak burada -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="@Url.Action("AddGroupCompany")" class="btn btn-primary">Yeni Grup Şirketi Ekle</a>

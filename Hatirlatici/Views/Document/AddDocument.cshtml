@@ -1,0 +1,52 @@
+﻿@model Hatirlatici.Models.Document
+
+<h1>Belge Ekle</h1>
+
+<form method="post" action="@Url.Action("AddDocument")">
+    <div class="form-group">
+        <label for="DocumentName">Belge Adı:</label>
+        <input type="text" id="DocumentName" name="DocumentName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="DocumentNumber">Belge Numarası:</label>
+        <input type="text" id="DocumentNumber" name="DocumentNumber" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="DocumentDate">Belge Tarihi:</label>
+        <input type="date" id="DocumentDate" name="DocumentDate" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CompanyId">Şirket:</label>
+        <select id="CompanyId" name="CompanyId" class="form-control" required>
+            @foreach (var company in ViewBag.Companies)
+            {
+                <option value="@company.Id">@company.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="BranchId">Şube:</label>
+        <select id="BranchId" name="BranchId" class="form-control" required>
+            @foreach (var branch in ViewBag.Branches)
+            {
+                <option value="@branch.Id">@branch.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ValidityPeriod">Geçerlilik Süresi:</label>
+        <input type="number" id="ValidityPeriod" name="ValidityPeriod" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Department">Belgeyi Temsil Eden Departman:</label>
+        <input type="text" id="Department" name="Department" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
